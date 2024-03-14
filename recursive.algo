@@ -1,0 +1,53 @@
+// Leap Year checker 
+
+FUNCTION CHECKER (year : INTEGER )
+
+BEGIN 
+ IF (year %4 =0 && year %100 != 0 || year % 400 =0) THEN 
+    RETURN TRUE
+    ELSE RETURN FALSE 
+ END_IF
+END 
+
+
+
+
+// Ticket Pricing 
+
+FUNCTION Ticket_Pricing (age : INTEGER )
+
+BEGIN 
+ SWITCH (age) DO
+    case age <= 12 : RETURN 10 $ ; 
+    break ;
+    case age <17 && age >13 : RETURN 15 $ ;
+    break ; 
+    default : RETURN 20 $
+ END_SWITCH   
+
+
+// power function 
+FUNCTION power (x,n : INTEGER): INTEGER 
+   BEGIN
+     IF (n=1)THEN 
+         RETURN x ;
+       ELSE 
+         RETURN x* power (x, n-1 ) 
+     END IF
+   END    
+
+   // chaine palaindrom 
+ FUNCTION PALAINDROME (str : string , left :0 , right:str.length-1): BOOLEAN
+ VAR 
+   res : BOOLEAN 
+ BEGIN
+     IF (str.(left)!=str.(right)) THEN 
+       RETURN FALSE 
+       ELSE IF (left < right) THEN
+        IF (str(left)==str(right)) THEN
+            PALAINDROME (str , ++left , --right)
+        END_IF
+      END_IF
+      RETURN res = TRUE 
+  END     
+               
